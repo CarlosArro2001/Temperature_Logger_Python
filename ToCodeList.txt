@@ -1,0 +1,19 @@
+1. Main Menu - FINISHED 
+2. Classes - FINISHED 
+    2a. Day Class - FINISHED
+    2b. Night Class - FINISHED 
+    2c. Main Class - FINISHED 
+3. Methods for the respective classes - FINISHED 
+4. List for testing of methods and how the methods are expected to behave with the data
+5. Setter and getter methods    
+    4a. Getting the temperatures
+    4b. Setting the temperatures 
+    4c. Getting temperatures pertaining to math functions :
+        i- max  
+        ii- min 
+        iii- average
+6. Test methods with list values
+7. CSV file integration
+8. Testing with CSV 
+9. Final testing of software 
+    
