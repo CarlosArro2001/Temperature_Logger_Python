@@ -1,7 +1,11 @@
+import csv 
 class DayTemp():
+    global file 
+    file = "DayTemp.csv"
+    global temp_Dic 
     temp_Dic = {
-        "date" : ["01/01/2021","02/01/2021","03/01/2021"],
-        "temp" : [17,18,19]
+        "Date":["01/02/2021","01/03/2021","01/04/2021"],
+        "Temp":[20,21,23]
     }
     def getTemperatures(self):
         print(temp_Dic["temp"]) #NameError : name 'temp_Dic' is not defined 
