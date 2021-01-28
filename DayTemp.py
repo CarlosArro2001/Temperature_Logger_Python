@@ -1,31 +1,29 @@
 import csv 
 class DayTemp():
-    global file 
-    file = "DayTemp.csv"
-    global temp_Dic 
-    temp_Dic = {
-        "Date":["01/02/2021","01/03/2021","01/04/2021"],
-        "Temp":[20,21,23]
-    }
+    #creating a global variable for the filename to allow access to all functions 
+    global file
+    #csv file which will be accessed to all functions 
+    file = "DayTemp.csv" 
+
+    #getter function that gets all the of the csvfile 
     def getTemperatures(self):
-        fields = []
-        rows = []
-        with open(file,'r') as csvfile:
+        rows = [] #this is where the values will be stored such that : [[<Date>,<Temperature]]
+        with open(file,'r') as csvfile: 
+            #using csv reader to append to the "rows" list 
             csvreader=csv.reader(csvfile)
-            fields = next(csvreader)
             for row in csvreader:
                 rows.append(row)
-            print("Total no. of rows: %d"%(csvreader.line_num))
-            print('Field Names are :' + ",".join(field for field in fields))
-            print("\n First 5 rows are : \n")
-            reader = csv.reader(csvfile)
-            lines = len(rows)
-            '''
-            for row in rows[:lines]:
-                for col in row:
-                    print("%10s"%col),
-                print('\n')
-            '''
+            #print statement to allow a better view of the data (kinda like a table)
+            print(" Date\t   Temperature(celsius)")
+            #variables for the loop 
+            l = len(rows)
+            i = 0 
+            #using while loop to output the values
+            while(i != l):
+                print("{0} : {1}".format(rows[i][0],rows[i][1]))
+                i = i + 1
+            
+
     def setTemperatures(self):
         print("Setting 'n' amount of temperatures")
     def getHighTemp(self):
