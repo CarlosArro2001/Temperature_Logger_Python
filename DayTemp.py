@@ -8,7 +8,24 @@ class DayTemp():
         "Temp":[20,21,23]
     }
     def getTemperatures(self):
-        print(temp_Dic["temp"]) #NameError : name 'temp_Dic' is not defined 
+        fields = []
+        rows = []
+        with open(file,'r') as csvfile:
+            csvreader=csv.reader(csvfile)
+            fields = next(csvreader)
+            for row in csvreader:
+                rows.append(row)
+            print("Total no. of rows: %d"%(csvreader.line_num))
+            print('Field Names are :' + ",".join(field for field in fields))
+            print("\n First 5 rows are : \n")
+            reader = csv.reader(csvfile)
+            lines = len(rows)
+            '''
+            for row in rows[:lines]:
+                for col in row:
+                    print("%10s"%col),
+                print('\n')
+            '''
     def setTemperatures(self):
         print("Setting 'n' amount of temperatures")
     def getHighTemp(self):
