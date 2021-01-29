@@ -33,7 +33,9 @@ class TempLog(DayTemp,NightTemp):
             elif(choice == 2):
                 n.getTemperatures()
             elif(choice == 3):
-                d.getTemperatures()
+                print("Enter amount of temperatures recorded")
+                n = int(input())
+                d.setTemperatures(n)
             elif(choice == 4):
                 n.getTemperatures()
             elif(choice == 5):

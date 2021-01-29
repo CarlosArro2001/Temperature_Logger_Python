@@ -1,7 +1,14 @@
-test_list = [['1/1/2021','20'],['1/2/2021','21'],['1/3/2021','22']]
-#print("{0} : {1}".format(test_list[0][0],test_list[0][1]))
-i = 0
-l = len(test_list)
-while(i != l):
-    print("{0} : {1}".format(test_list[i][0],test_list[i][1]))
-    i = i + 1 
+import csv
+first_list = []
+second_list = []
+second_list.append("1/4/2021")
+second_list.append("23")
+print(second_list)
+first_list.append(second_list)
+print(first_list)
+global file
+file = "DayTemp.csv"
+with open(file,'a') as csvfile:
+    csvwriter = csv.writer(csvfile)
+    csvwriter.writerows(first_list)
+    print("CSV UDPATED")
