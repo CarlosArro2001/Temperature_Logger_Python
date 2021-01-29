@@ -4,9 +4,9 @@
     2b. Night Class - FINISHED 
     2c. Main Class - FINISHED 
 3. Methods for the respective classes - FINISHED 
-4. List for testing of methods and how the methods are expected to behave with the data
+4. List for testing of methods and how the methods are expected to behave with the data - FINISHED
 5. Setter and getter methods    
-    4a. Getting the temperatures
+    4a. Getting the temperatures - FINISHED
     4b. Setting the temperatures 
     4c. Getting temperatures pertaining to math functions :
         i- max  
