@@ -48,8 +48,54 @@ class DayTemp():
             new_values.clear()
                 
     def getHighTemp(self):
-        print("Getting High Temp")
+        rows = []
+        with open(file,'r') as csvfile:
+            reader = csv.reader(csvfile,delimiter =',')
+            for row in reader:
+                if(not row):
+                    continue
+                else:
+                    rows.append(row)
+            rows.remove(rows[0]) #removing the first element which is ['Date','Temperature']
+            n = len(rows)
+            for i in range(n):
+                for j in range(0,n-i-1):
+                    if(int(rows[j][1]) > int(rows[j+1][1])):
+                        rows[j] , rows[j+1] = rows[j+1] , rows[j]
+        print(rows)
+        print("Highest Day Temp : {0} on {1}".format(rows[len(rows)-1][1],rows[len(rows)-1][0]))
+    
     def getLowTemp(self):
-        print("Getting Low Temp")
+        rows = []
+        with open(file,'r') as csvfile:
+            reader = csv.reader(csvfile,delimiter =',')
+            for row in reader:
+                if(not row):
+                    continue
+                else:
+                    rows.append(row)
+            rows.remove(rows[0]) #removing the first element which is ['Date','Temperature']
+            n = len(rows)
+            for i in range(n):
+                for j in range(0,n-i-1):
+                    if(int(rows[j][1]) > int(rows[j+1][1])):
+                        rows[j] , rows[j+1] = rows[j+1] , rows[j]
+        print("Lowest Day Temp : {0} on {1}".format(rows[0][1],rows[0][0]))
     def getAvgTemp(self):
-        print("Getting Average Temp")
+        rows = []
+        temperatures = []
+        with open(file,'r') as csvfile:
+            reader = csv.reader(csvfile,delimiter =',')
+            for row in reader:
+                if(not row):
+                    continue
+                else:
+                    rows.append(row)
+            rows.remove(rows[0]) #removing the first element which is ['Date','Temperature']
+            i = 0
+            while(i != len(rows)):
+                temperatures.append(int(rows[i][1]))
+                i = i + 1
+            print(temperatures)
+            avg = sum(temperatures)/len(temperatures)
+            print("Average Day temperature :{0}".format(avg))
