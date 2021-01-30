@@ -6,7 +6,7 @@ class DayTemp():
     file = "DayTemp.csv" 
 
     #getter function that gets all the of the csvfile 
-    def getTemperatures(self):
+    def getTemperatures(self): #NEW ERROR 30/01/2021 : "Line 23 , in getTemperatures print("{0} : {1}".format(rows[i][0],rows[i][1])) IndexError : list index out of range
         rows = [] #this is where the values will be stored such that : [[<Date>,<Temperature]]
         with open(file,'r') as csvfile: 
             #using csv reader to append to the "rows" list 
