@@ -20,8 +20,6 @@ class TempLog(DayTemp,NightTemp):
         print("\t Get average night temperature , enter :  10  ")
         print("\t To exit program , enter : 11")
     #below refers to the input of the user , as long as the user doesn't input the value of 11 (which closes the program via sys.exit() function)
-    #need to work on error handling for the the input of invalid values , as when the input is a non-integer value 
-    #the program will just stop 
         choice = 0
         n = NightTemp()
         d = DayTemp()        
